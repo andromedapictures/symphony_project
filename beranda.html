@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beranda | Symphony Project</title>
+  <meta name="description" content="Symphony Project - Penyedia jasa hiburan dan pengisi acara profesional untuk momen yang berkesan dan tak terlupakan.">
+  <link rel="stylesheet" href="beranda.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">SYMPHONY</div>
+      <button class="hamburger" id="hamburger">Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="beranda.html" class="active">BERANDA</a></li>
+        <li><a href="galeri.html">GALERI</a></li>
+        <li><a href="hargabooking.html">HARGA & BOOKING</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+      <button class="prev">&#10094;</button>
+      <div class="slide-track">
+        <div class="slide"><img src="slideshow/slide1.jpg" alt="Slide 1"></div>
+        <div class="slide"><img src="slideshow/slide2.jpg" alt="Slide 2"></div>
+        <div class="slide"><img src="slideshow/slide3.jpg" alt="Slide 3"></div>
+      </div>
+      <button class="next">&#10095;</button>
+    </div>
+
+    <!-- Hero Section 1 -->
+    <section class="hero-section">
+      <div class="hero-text">
+        <h1>Symphony Project</h1>
+        <p>
+          Kami menyediakan jasa hiburan dan pengisi acara di acara Anda.<br>
+          Memberikan kesan bahagia dengan momen tak terlupakan adalah misi kami.<br><br>
+          Jadikan acara Anda berkesan dan tak terlupakan bersama kami <strong>SYMPHONY PROJECT</strong>.<br><br>
+          <em>Salam hangat dari kami,<br>Symphony Project</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- Hero Section 2 -->
+    <section class="hero-section">
+      <div class="hero-text">
+        <h1>Kategori Jasa :</h1>
+        <p>
+          Beberapa kategori yang kami dapat hadirkan untuk memenuhi kebutuhan acara Anda:<br><br>
+          <strong>- Master of Ceremony (MC)</strong><br>
+          <strong>- Vokal</strong><br>
+          <strong>- Soundsystem</strong><br><br>
+          <em>Salam hangat dari kami,<br>Symphony Project</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- Hero Section 3 -->
+    <section class="hero-section">
+      <div class="hero-text" style="text-align: center;">
+        <h1>Butuh Jasa Kami untuk Acara Anda?</h1>
+        <p>Pesan/Booking sekarang juga untuk mendapatkan pengalaman terbaik dari kami Symphony Project!</p>
+        <a href="#" class="cta-button">PESAN/BOOKING SEKARANG</a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Slideshow
+    const track = document.querySelector('.slide-track');
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    function updateSlidePosition() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlidePosition();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateSlidePosition();
+    });
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlidePosition();
+    }, 5000);
+
+    // Hamburger Menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>

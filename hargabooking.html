@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harga & Booking | Symphony Project</title>
+  <meta name="description" content="Halaman Harga dan Booking Symphony Project" />
+  <link rel="stylesheet" href="beranda.css" />
+  <link rel="icon" href="images/favicon.png" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">SYMPHONY</div>
+      <button class="hamburger" id="hamburger">Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="beranda.html">BERANDA</a></li>
+        <li><a href="galeri.html">GALERI</a></li>
+        <li><a href="hargabooking.html" class="active">HARGA & BOOKING</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
+  <div class="main-content">
+    <section class="hero-section" style="text-align: center;">
+      <div class="hero-text">
+        <h1>DALAM PENGEMBANGAN</h1>
+        <p>Halaman ini sedang kami siapkan untuk Anda. Nantikan informasi lengkap mengenai harga & cara booking Symphony Project.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Script Menu -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>
