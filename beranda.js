@@ -39,3 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000);
   }
 });
+// Toggle Tombol "Hubungi Kami" dengan animasi ke atas
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("contactToggle");
+  const contactOptions = document.getElementById("contactOptions");
+
+  toggleBtn.addEventListener("click", () => {
+    contactOptions.classList.toggle("show");
+  });
+});
