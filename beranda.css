@@ -224,9 +224,11 @@ body::before {
 /* RESPONSIF */
 @media (max-width: 768px) {
   .main-content {
-    padding-top: 5rem;
+    padding-top: 6.5rem;  /* sebelumnya mungkin 4rem */
     gap: 0.5rem;
-    padding: 4rem 1rem 2rem; /* mengecilkan padding kiri & kanan */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
   }
   .slideshow-container {
     height: 150px;
