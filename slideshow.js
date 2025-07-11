@@ -1,5 +1,6 @@
-// slideshow.js
+// beranda.js
 document.addEventListener('DOMContentLoaded', () => {
+  // Slideshow
   let currentIndex = 0;
   const track = document.querySelector('.slide-track');
   const slides = document.querySelectorAll('.slide');
@@ -32,4 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
     currentIndex = (currentIndex + 1) % totalSlides;
     updateSlide();
   }, 5000);
+
+  // Hamburger Menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
 });
