@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Pemesanan | Symphony Project</title>
+  <link rel="stylesheet" href="beranda.css" />
+  <link rel="icon" href="images/favicon.png" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">SYMPHONY</div>
+      <button class="hamburger cta-button" id="hamburger">Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="beranda.html">BERANDA</a></li>
+        <li><a href="galeri.html">GALERI</a></li>
+        <li><a href="hargabooking.html" class="active">HARGA & BOOKING</a></li>
+      </ul>
+    </div>
+  </header>
+
+<!-- Main Content -->
+<div class="main-content">
+  <section class="hero-section" style="flex-direction: column; align-items: center;">
+    <div class="hero-text" style="max-width: 600px; width: 100%;">
+      <h1 style="text-align:center;">Formulir Pemesanan</h1>
+      <form id="formPemesanan" class="form-wrapper">
+        <div class="form-group">
+          <label for="namaPemesan">NAMA PEMESAN</label>
+          <input type="text" id="namaPemesan" required />
+        </div>
+
+        <div class="form-group">
+          <label for="paket id">JENIS PAKET</label>
+          <select id="paket" required>
+            <option value="">-- Pilih Paket --</option>
+            <option value="Paket">Wedding 1 Rp. </option>
+            <option value="Paket">Wedding 2</option>
+            <option value="Paket">Wedding 3</option>
+            <option value="Paket">Hajatan 1</option>
+            <option value="Paket">Hajatan 2</option>
+            <option value="Paket">Hajatan 3</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="namaPengantin">NAMA PENGANTIN/PEMILIK ACARA</label>
+          <input type="text" id="namaPengantin" required />
+        </div>
+
+        <div class="form-group">
+          <label for="tanggalAcara">TANGGAL ACARA</label>
+          <input type="date" id="tanggalAcara" required />
+        </div>
+
+      <div class="form-group">
+  <label for="provinsi">PROVINSI</label>
+  <select id="provinsi" required>
+    <option value="">-- Pilih Provinsi --</option>
+    <option value="Aceh">Aceh</option>
+    <option value="Sumatera Utara">Sumatera Utara</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="kota">KOTA/KABUPATEN</label>
+  <select id="kota" disabled required>
+    <option value="">-- Pilih Kota/Kabupaten --</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="kecamatan">KECAMATAN</label>
+  <select id="kecamatan" disabled required>
+    <option value="">-- Pilih Kecamatan --</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="gampong">GAMPONG</label>
+  <input type="text" id="gampong" placeholder="Tulis nama gampong" required />
+</div>
+
+
+        <div class="form-group">
+          <label for="noHP">NO HP AKTIF</label>
+          <input type="tel" id="noHP" required />
+        </div>
+
+      <div class="form-group" style="display: flex; align-items: flex-start; gap: 12px;">
+  <input type="checkbox" id="konfirmasiPaket" required style="width: 20px; height: 20px; margin-top: 4px;" />
+  <label for="konfirmasiPaket" style="line-height: 1.5; font-size: 15px;">
+    Saya memahami bahwa <strong>PAKET WEDDING</strong> hanya digunakan untuk acara <strong>Pesta Pernikahan</strong>,<br>
+    sedangkan <strong>PAKET HAJATAN</strong> untuk acara selain pesta pernikahan.
+  </label>
+</div>
+
+
+        <button type="submit" class="cta-button">PESAN SEKARANG</button>
+      </form>
+    </div>
+  </section>
+</div>
+
+
+<!-- Tombol Mengambang Kembali -->
+<div class="floating-contact">
+  <button class="cta-button contact-main" onclick="window.location.href='hargabooking.html'">KEMBALI</button>
+</div>
+
+<script src="formpesanan.js"></script>
+</body>
+</html>
