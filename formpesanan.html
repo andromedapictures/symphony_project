@@ -6,6 +6,8 @@
   <title>Form Pemesanan | Symphony Project</title>
   <link rel="stylesheet" href="beranda.css" />
   <link rel="icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>#map { height: 300px; width: 100%; border-radius: 8px; margin-top: 10px; }</style>
 </head>
 <body>
 
@@ -56,34 +58,18 @@
           <input type="date" id="tanggalAcara" required />
         </div>
 
-      <div class="form-group">
-  <label for="provinsi">PROVINSI</label>
-  <select id="provinsi" required>
-    <option value="">-- Pilih Provinsi --</option>
-    <option value="Aceh">Aceh</option>
-    <option value="Sumatera Utara">Sumatera Utara</option>
-  </select>
-</div>
+        <div class="form-group">
+          <label for="alamatacara">ALAMAT ACARA</label>
+          <input type="text" id="alamatacara" required />
+        </div>
 
-<div class="form-group">
-  <label for="kota">KOTA/KABUPATEN</label>
-  <select id="kota" disabled required>
-    <option value="">-- Pilih Kota/Kabupaten --</option>
-  </select>
-</div>
+        <div class="form-group">
+          <label for="alamat">TANDAI ALAMAT LOKASI DI PETA</label>
+          <input type="text" id="alamat" placeholder="Tandai Lokasi Acara di MAPS" required />
+        </div>
 
-<div class="form-group">
-  <label for="kecamatan">KECAMATAN</label>
-  <select id="kecamatan" disabled required>
-    <option value="">-- Pilih Kecamatan --</option>
-  </select>
-</div>
-
-<div class="form-group">
-  <label for="gampong">GAMPONG</label>
-  <input type="text" id="gampong" placeholder="Tulis nama gampong" required />
-</div>
-
+        <!-- PETA LOKASI -->
+        <div id="map"></div>
 
         <div class="form-group">
           <label for="noHP">NO HP AKTIF</label>
@@ -91,25 +77,40 @@
         </div>
 
       <div class="form-group" style="display: flex; align-items: flex-start; gap: 12px;">
-  <input type="checkbox" id="konfirmasiPaket" required style="width: 20px; height: 20px; margin-top: 4px;" />
-  <label for="konfirmasiPaket" style="line-height: 1.5; font-size: 15px;">
-    Saya memahami bahwa <strong>PAKET WEDDING</strong> hanya digunakan untuk acara <strong>Pesta Pernikahan</strong>, sedangkan <strong>PAKET HAJATAN</strong> untuk acara selain pesta pernikahan.
-  </label>
-</div>
-
-
-        <button type="submit" class="cta-button">PESAN SEKARANG</button>
-      </form>
+        <input type="checkbox" id="konfirmasiPaket" required style="width: 20px; height: 20px; margin-top: 4px;" />
+        <label for="konfirmasiPaket" style="line-height: 1.5; font-size: 15px;">
+          Saya memahami bahwa <strong>PAKET WEDDING</strong> hanya digunakan untuk acara <strong>Pesta Pernikahan</strong>, sedangkan <strong>PAKET HAJATAN</strong> untuk acara selain pesta pernikahan.
+        </label>
+      </div>
+    
+      <button type="submit" class="cta-button">PESAN SEKARANG</button>
+        
     </div>
   </section>
 </div>
-
 
 <!-- Tombol Mengambang Kembali -->
 <div class="floating-contact">
   <button class="cta-button contact-main" onclick="window.location.href='hargabooking.html'">KEMBALI</button>
 </div>
 
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map').setView([-6.200000, 106.816666], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+  let marker;
+  map.on('click', function(e) {
+    if (marker) {
+      marker.setLatLng(e.latlng);
+    } else {
+      marker = L.marker(e.latlng).addTo(map);
+    }
+    document.getElementById('alamat').value = `https://www.google.com/maps?q=${e.latlng.lat},${e.latlng.lng}`;
+  });
+</script>
 <script src="formpesanan.js"></script>
 </body>
 </html>
