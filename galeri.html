@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galeri | Symphony Project</title>
+  <meta name="description" content="Galeri Dokumentasi Symphony Project" />
+  <link rel="stylesheet" href="beranda.css" />
+  <link rel="icon" href="images/favicon.png" />
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .gallery-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.03);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    .video-item {
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-item video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .video-grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">SYMPHONY</div>
+      <button class="hamburger cta-button" id="hamburger">Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="beranda.html">BERANDA</a></li>
+        <li><a href="galeri.html" class="active">GALERI</a></li>
+        <li><a href="hargabooking.html">HARGA & BOOKING</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
+  <div class="main-content">
+
+    <!-- Hero Title -->
+    <section class="hero-section">
+      <div class="hero-text">
+        <h1>Galeri Dokumentasi</h1>
+        <p>
+          Berikut beberapa momen terbaik bersama Symphony Project yang kami abadikan.
+          Kami selalu siap memberikan pengalaman tak terlupakan untuk acara Anda.
+        </p>
+      </div>
+    </section>
+
+    <!-- Galeri Gambar -->
+    <section class="hero-section" style="flex-direction: column;">
+      <div class="gallery-grid">
+        <img src="images/galerifoto/galery1.jpg" alt="Foto 1" class="gallery-img">
+        <img src="images/galerifoto/galery2.jpg" alt="Foto 2" class="gallery-img">
+        <img src="images/galerifoto/galery3.jpg" alt="Foto 3" class="gallery-img">
+        <img src="images/galerifoto/galery4.jpg" alt="Foto 4" class="gallery-img">
+        <img src="images/galerifoto/galery5.jpg" alt="Foto 5" class="gallery-img">
+        <img src="images/galerifoto/galery6.jpg" alt="Foto 6" class="gallery-img">
+      </div>
+    </section>
+
+    <!-- Galeri Video -->
+    <section class="hero-section" style="flex-direction: column;">
+      <div class="hero-text">
+        <h1>Galeri Video</h1>
+        <p>Cuplikan momen yang direkam bersama Symphony Project.</p>
+      </div>
+      <div class="video-grid">
+        <div class="video-item">
+          <video controls>
+            <source src="galerivideo/videogaleri1.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video.
+          </video>
+        </div>
+        <div class="video-item">
+          <video controls>
+            <source src="galerivideo/videogaleri2.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video.
+          </video>
+        </div>
+        <div class="video-item">
+          <video controls>
+            <source src="videos/video3.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video.
+          </video>
+        </div>
+        <div class="video-item">
+          <video controls>
+            <source src="videos/video4.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video.
+          </video>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+<!-- Tombol Mengambang Hubungi Kami -->
+<div class="floating-contact">
+  <div class="contact-options" id="contactOptions">
+    <a href="https://wa.me/6285333441651" class="cta-button contact-icon wa" target="_blank">WhatsApp</a>
+    <a href="https://tiktok.com/" class="cta-button contact-icon tiktok" target="_blank">TikTok</a>
+    <a href="https://www.instagram.com/symphony_project_lgs" class="cta-button contact-icon ig" target="_blank">Instagram</a>
+  </div>
+  <button class="cta-button contact-main" id="contactToggle">Hubungi Kami</button>
+</div>
+
+  <!-- JavaScript -->
+  <script src="beranda.js"></script>
+</body>
+</html>
